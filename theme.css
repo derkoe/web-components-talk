@@ -1,0 +1,57 @@
+@import url(./node_modules/reveal.js/css/theme/moon.css);
+
+.reveal {
+  font-size: 2.5em;
+}
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  text-transform: none;
+}
+
+.reveal .start h1 {
+  font-size: 2.5em;
+}
+.reveal .start h2 {
+  font-size: 1em;
+}
+  
+.reveal .slides section .fragment.strike {
+  visibility: visible;
+}
+.reveal em {
+  font-style: normal;
+}
+.reveal h2:nth-child(2) em, .reveal h3:nth-child(2) em {
+  color: rgb(109, 179, 76);
+}
+.reveal h2:nth-child(3) em, .reveal h3:nth-child(3) em {
+  color: rgb(179, 76, 122);
+}
+.reveal h2:nth-child(4) em, .reveal h3:nth-child(4) em {
+  color: rgb(76, 148, 179);
+}
+.reveal section img {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  vertical-align: middle;
+}
+.reveal section ul {
+  min-width: 80%;
+}
+.reveal .footnote {
+  font-size: 14px;
+}
+.reveal pre {
+  font-size: 0.7em;
+  line-height: 1em;
+}
+.reveal code {
+  font-size: 1em;
+  padding: 5px;
+}
+.typescript {
+  color: deepskyblue;
+}
+.es6 {
+  color: lightgreen;
+}

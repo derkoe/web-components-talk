@@ -1,0 +1,18 @@
+{
+  "name": "web-components-talk",
+  "version": "1.0.0",
+  "description": "Typescript - The better JavaScript?",
+  "scripts": {
+    "start": "browser-sync start -s --no-open",
+    "watch": "browser-sync start -s --no-open -f index.html,poi.css"
+  },
+  "author": "Christian Köberl",
+  "license": "CC-BY-SA-4.0",
+  "dependencies": {
+    "highlight.js": "9.13.1",
+    "reveal.js": "3.7.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8"
+  }
+}

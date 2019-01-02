@@ -9,8 +9,15 @@
   </head>
   <body>
     <dk-tabs>
-      <dk-tab title="Tab 1">This is tab one</dk-tab>
-      <dk-tab title="Tab 2"><div>Antoher tab</div></dk-tab>
+      <dk-tab title="Tab One">
+        This is tab one
+      </dk-tab>
+      <dk-tab title="Tab 2">
+        <dk-tabs>
+          <dk-tab title="Subtab with a very long text indeed">This is tab two / one</dk-tab>
+          <dk-tab title="Subtab 2">Subtab two</dk-tab>
+        </dk-tabs>
+      </dk-tab>
     </dk-tabs>
   </body>
 </html>

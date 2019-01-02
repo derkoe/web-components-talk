@@ -67,8 +67,45 @@
       <section>
 
         <section>
-          <h2>Why A?</h2>
-        </section> 
+          <h2>Web Components</h2>
+          <ul>
+            <li>Custom Elements</li>
+            <li>Shadow Dom</li>
+            <li>HTML Templates</li>
+            <li>HTML Imports</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Custom Elements</h2>
+          <pre><code class="hljs">&lt;head&gt;&#10;  ...&#10;  &lt;link rel=&quot;import&quot; href=&quot;dk-tabs.html&quot;&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;dk-tabs&gt;&#10;    &lt;dk-tab title=&quot;Tab 1&quot;&gt;This is tab one&lt;/dk-tab&gt;&#10;    &lt;dk-tab title=&quot;Tab 2&quot;&gt;&lt;div&gt;Antoher tab&lt;/div&gt;&lt;/dk-tab&gt;&#10;  &lt;/dk-tabs&gt;&#10;&lt;/body&gt;</code></pre>
+        </section>
+
+        <section>
+          <h2>Custom Elements</h2>
+          <img src="custom_elements.jpg" alt="Can I use Custom Elements">
+          <aside class="notes">
+            Safari only supports new elements - not customized built-in elements.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Shadow DOM</h2>
+          <img src="shadow_dom.jpg" alt="Can I use Shadow DOM">
+          <aside class="notes">
+            Safari has some issues with CSS selectors (:host > .local)
+          </aside>
+        </section>
+
+        <section>
+          <h2>HTML Templates</h2>
+          <img src="html_templates.jpg" alt="Can I use HTML Templates">
+        </section>
+
+        <section>
+          <h2>HTML Imports</h2>
+          <img src="html_imports.jpg" alt="Can I use HTML Imports">
+        </section>
 
       </section>
       <section>

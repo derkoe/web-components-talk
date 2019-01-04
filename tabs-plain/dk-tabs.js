@@ -71,7 +71,7 @@ class DkTabs extends HTMLElement {
       if (!existingTitle) {
         const tabHeader = document.createElement("div");
         tabHeader.setAttribute("id", `${tab.id}-title`)
-        tabHeader.addEventListener("click", (div, ev) => this._selectTab(i))
+        tabHeader.addEventListener("click", () => this._selectTab(i))
         tabHeader.setAttribute("title", tab.title);
         tabHeader.appendChild(document.createTextNode(tab.title));
         tabHeadersElm.appendChild(tabHeader);

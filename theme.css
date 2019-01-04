@@ -1,22 +1,5 @@
 @import url(./node_modules/reveal.js/css/theme/moon.css);
 
-.reveal {
-  font-size: 2.5em;
-}
-.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-  text-transform: none;
-}
-
-.reveal .start h1 {
-  font-size: 2.5em;
-}
-.reveal .start h2 {
-  font-size: 1em;
-}
-  
-.reveal .slides section .fragment.strike {
-  visibility: visible;
-}
 .reveal em {
   font-style: normal;
 }

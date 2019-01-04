@@ -57,28 +57,33 @@
         </section>
 
         <section>
-            <h2>Overview</h2>
-            <ul>
-                <li>Hallo</li>
-            </ul>
+            <h2>Agenda</h2>
+            <div>
+              <p>Web Components: <br>Custom Elements, Shadow DOM & Co</p>
+              <p>Stencil.js</p>
+              <p>Angular Elements</p>
+              <p>Future?</p>
+            </div>
         </section>
 
       </section>
       <section>
 
         <section>
-          <h2>Web Components</h2>
-          <ul>
-            <li>Custom Elements</li>
-            <li>Shadow Dom</li>
-            <li>HTML Templates</li>
-            <li>HTML Imports</li>
-          </ul>
+          <small>Web Components</small>
+          <h2><em>Custom Elements</em></h2>
+          <h2><em>Shadow DOM</em></h2>
+          <h2><em>HTML Templates</em></h2>
+          <h2 class="fragment strike"><em>HTML Imports</em></h2>
         </section>
 
         <section>
           <h2>Custom Elements</h2>
-          <pre><code class="hljs">&lt;head&gt;&#10;  ...&#10;  &lt;link rel=&quot;import&quot; href=&quot;dk-tabs.html&quot;&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;dk-tabs&gt;&#10;    &lt;dk-tab title=&quot;Tab 1&quot;&gt;This is tab one&lt;/dk-tab&gt;&#10;    &lt;dk-tab title=&quot;Tab 2&quot;&gt;&lt;div&gt;Antoher tab&lt;/div&gt;&lt;/dk-tab&gt;&#10;  &lt;/dk-tabs&gt;&#10;&lt;/body&gt;</code></pre>
+          <pre><code class="hljs html">&lt;dk-tabs&gt;
+  &lt;dk-tab title=&quot;Tab 1&quot;&gt;This is tab one&lt;/dk-tab&gt;
+  &lt;dk-tab title=&quot;Tab 2&quot;&gt;&lt;div&gt;Antoher tab&lt;/div&gt;&lt;/dk-tab&gt;
+&lt;/dk-tabs&gt;</code></pre>
+          <iframe src="./tabs-plain/simple.html"></iframe>
         </section>
 
         <section>
@@ -107,6 +112,17 @@
           <img src="html_imports.jpg" alt="Can I use HTML Imports">
         </section>
 
+        <section>
+          <h2>Polyfills / Shims</h2>
+          <p><a href="https://github.com/webcomponents/webcomponentsjs">@webcomponents/webcomponentsjs</a></p>
+          <small>Full suport for Custom Elements, Shadow DOM and Templates,<br>~100kB minified, 31kB zipped</small>
+          <p><a href="https://github.com/WebReflection/document-register-element">document-register-element</a></p>
+          <small>Only Custom Elements (used by @angular/elements),<br>~14kB minified, 6kB zipped</small>
+          <aside class="notes">
+              webcomponents-loader.js - client-side loader that dynamically loads the minimum polyfill bundle
+          </aside>
+        </section>
+
       </section>
       <section>
 
@@ -127,9 +143,9 @@
         <section>
           <h3>References, Further Readings</h3>
           <ul>
-            <li><a href="https://www.youtube.com/watch?v=XoxHsspCFyQ" target="_blank">Bowden Kelly: TypeScript The Language You Already Know</a></li>
-            <li><a href="https://www.typescript-weekly.com/" target="_blank">TypeScript Weekly</a></li>
-            <li><a href="http://djcordhose.github.io/flow-vs-typescript/2017_jax.html" target="_blank">Oliver Zeigermann: Typed JavaScript using TypeScript and Flow</a></li>
+            <li><a href="https://developers.google.com/web/fundamentals/web-components/" target="_blank">Building Components | Google Developers</a></li>
+            <li><a href="https://stenciljs.com/">Stencil Homepage</a></li>
+            <li><a href="https://angular.io/guide/elements">Angular Elements</a></li>
           </ul>
         </section>
 

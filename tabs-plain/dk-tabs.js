@@ -82,8 +82,13 @@ class DkTabs extends HTMLElement {
   _selectTab(idx) {
     for (let i = 0, tab; tab = this.tabs[i]; ++i) {
       const selected = i === idx;
-      tab.setAttribute('aria-selected', selected);
       tab.setAttribute('aria-hidden', !selected);
+      // set style.display for Edge (CSS not working)
+      if (selected) {
+        tab.style.display = '';
+      } else {
+        tab.style.display = 'none';
+      }
     }
   }
 }

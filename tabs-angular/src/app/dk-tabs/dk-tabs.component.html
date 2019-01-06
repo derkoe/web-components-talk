@@ -1,0 +1,10 @@
+<div>
+  <div id="tabs">
+      <div *ngFor="let tab of tabs; index as idx" [title]="tab.title" (click)="selectTab(idx)">
+        {{tab.title}}
+      </div>
+  </div>
+  <div id="panels">
+    <slot (slotchange)="slotChange($event)"></slot>
+  </div>
+</div>

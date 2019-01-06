@@ -9,7 +9,11 @@ export class Tabs {
   /**
    * Index of the selected tab.
    */
-  @Prop({ mutable: true }) selected: number;
+  @Prop({
+    mutable: true,
+    reflectToAttr: true
+  })
+  selected = 0;
 
   @Element()
   el: HTMLElement;
@@ -19,7 +23,7 @@ export class Tabs {
 
   componentWillLoad() {
     this.tabs = Array.from(this.el.children) as HTMLDkTabElement[];
-    this.selectTab(0);
+    this.selectTab(this.selected);
   }
 
   selectTab(idx: number) {
@@ -29,9 +33,9 @@ export class Tabs {
       tab.setAttribute("aria-hidden", !selected);
       // set style.display for Edge (CSS not working)
       if (selected) {
-        tab.style.display = '';
+        tab.style.display = "";
       } else {
-        tab.style.display = 'none';
+        tab.style.display = "none";
       }
     }
   }

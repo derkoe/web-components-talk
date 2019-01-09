@@ -34,6 +34,8 @@ const template = `<style>
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   background: linear-gradient(#fafafa, #eee);
+  border-right: 1px solid #666;
+  border-bottom: 1px solid #666;
 }
 #panels ::slotted([aria-hidden="true"]) {
   display: none;

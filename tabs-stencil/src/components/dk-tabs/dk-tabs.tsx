@@ -21,8 +21,19 @@ export class Tabs {
   @State()
   tabs: HTMLDkTabElement[] = [];
 
-  componentWillLoad() {
-    this.tabs = Array.from(this.el.children) as HTMLDkTabElement[];
+  componentDidLoad() {
+    this.updateTabs(this.el.shadowRoot.querySelector("slot"));
+  }
+
+  updateTabs(slot) {
+    if (slot) {
+      this.tabs = slot.assignedNodes({ flatten: true }).filter(el => {
+        return el.nodeName === "DK-TAB";
+      });
+    } else {
+      // this is for Browser not supporting HTMLSlotElement#assignedNodes
+      this.tabs = Array.from(this.el.querySelector("#panels").children) as HTMLDkTabElement[];
+    }
     this.selectTab(this.selected);
   }
 
@@ -51,7 +62,7 @@ export class Tabs {
           ))}
         </div>
         <div id="panels">
-          <slot />
+          <slot></slot>
         </div>
       </div>
     );

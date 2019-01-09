@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                | Type     | Default     |
-| ---------- | ---------- | -------------------------- | -------- | ----------- |
-| `selected` | `selected` | Index of the selected tab. | `number` | `undefined` |
+| Property   | Attribute  | Description                | Type     | Default |
+| ---------- | ---------- | -------------------------- | -------- | ------- |
+| `selected` | `selected` | Index of the selected tab. | `number` | `0`     |
 
 
 ----------------------------------------------

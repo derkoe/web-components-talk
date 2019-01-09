@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Typescript - The better JavaScript?</title>
+  <title>Web Components - Are we there yet?</title>
 
   <meta name="description" content="">
   <meta name="author" content="Christian Köberl">
@@ -87,8 +87,13 @@
         </section>
 
         <section>
+            <h2>Shadow DOM</h2>
+            <img src="shadow_dom_devtools.jpg" alt="Chrome Dev Tools showing Shadow DOM">
+          </section>
+
+        <section>
           <h2>Custom Elements</h2>
-          <img src="custom_elements.jpg" alt="Can I use Custom Elements">
+          <img src="caniuse_custom_elements.jpg" alt="Can I use Custom Elements">
           <aside class="notes">
             Safari only supports new elements - not customized built-in elements.
           </aside>
@@ -96,7 +101,7 @@
 
         <section>
           <h2>Shadow DOM</h2>
-          <img src="shadow_dom.jpg" alt="Can I use Shadow DOM">
+          <img src="caniuse_shadow_dom.jpg" alt="Can I use Shadow DOM">
           <aside class="notes">
             Safari has some issues with CSS selectors (:host > .local)
           </aside>
@@ -104,12 +109,12 @@
 
         <section>
           <h2>HTML Templates</h2>
-          <img src="html_templates.jpg" alt="Can I use HTML Templates">
+          <img src="caniuse_html_templates.jpg" alt="Can I use HTML Templates">
         </section>
 
         <section>
           <h2>HTML Imports</h2>
-          <img src="html_imports.jpg" alt="Can I use HTML Imports">
+          <img src="caniuse_html_imports.jpg" alt="Can I use HTML Imports">
         </section>
 
         <section>
@@ -123,7 +128,21 @@
           </aside>
         </section>
 
+        <section>
+          <h2>Options</h2>
+          <p>Custom Elements / Shadow DOM API</p>
+          <p>Lib / Compiler: <br> Stencil.js, SkateJS, Polymer, lit-element</p>
+          <p>Framework: <br> Angular, Vue, ...</p>
+        </section>
+
+        <section>
+          <h2>Comparing NPM Downloads</h2>
+          <img src="stencil-skate-polymet-lit.png" style="background-color: white" alt="Comparing NPM downloads of Stenicl.js, SkateJS, Polymer and lit-element">
+          <small><a href="https://www.npmtrends.com/@stencil/core-vs-skatejs-vs-@polymer/polymer-vs-@polymer/lit-element">Source: www.npmtrends.com</a></small>
+        </section>
+
       </section>
+
       <section>
 
         <section>
@@ -177,10 +196,10 @@
       }, {
         src: 'node_modules/reveal.js/plugin/notes/notes.js',
         async: true
-      }, { 
-        src: 'node_modules/reveal.js/plugin/highlight/highlight.js', 
-        async: true, 
-        callback: function() { hljs.initHighlightingOnLoad(); } 
+      }, {
+        src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
+        async: true,
+        callback: function() { hljs.initHighlightingOnLoad(); }
       }]
     });
   </script>

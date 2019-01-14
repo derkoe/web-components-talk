@@ -8,60 +8,36 @@
 import '@stencil/core';
 
 
-import {
-  Todo,
-} from './todo';
 
 
 export namespace Components {
 
-  interface TodoApp {}
-  interface TodoAppAttributes extends StencilHTMLAttributes {}
-
-  interface TodoList {
-    'todos': Todo[];
-  }
-  interface TodoListAttributes extends StencilHTMLAttributes {
-    'onEditTitle'?: (event: CustomEvent) => void;
-    'onTodoDeleted'?: (event: CustomEvent) => void;
-    'onToggleAll'?: (event: CustomEvent) => void;
-    'onToggleCompleted'?: (event: CustomEvent) => void;
-    'todos'?: Todo[];
-  }
+  interface TodomvcStencil {}
+  interface TodomvcStencilAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'TodoApp': Components.TodoApp;
-    'TodoList': Components.TodoList;
+    'TodomvcStencil': Components.TodomvcStencil;
   }
 
   interface StencilIntrinsicElements {
-    'todo-app': Components.TodoAppAttributes;
-    'todo-list': Components.TodoListAttributes;
+    'todomvc-stencil': Components.TodomvcStencilAttributes;
   }
 
 
-  interface HTMLTodoAppElement extends Components.TodoApp, HTMLStencilElement {}
-  var HTMLTodoAppElement: {
-    prototype: HTMLTodoAppElement;
-    new (): HTMLTodoAppElement;
-  };
-
-  interface HTMLTodoListElement extends Components.TodoList, HTMLStencilElement {}
-  var HTMLTodoListElement: {
-    prototype: HTMLTodoListElement;
-    new (): HTMLTodoListElement;
+  interface HTMLTodomvcStencilElement extends Components.TodomvcStencil, HTMLStencilElement {}
+  var HTMLTodomvcStencilElement: {
+    prototype: HTMLTodomvcStencilElement;
+    new (): HTMLTodomvcStencilElement;
   };
 
   interface HTMLElementTagNameMap {
-    'todo-app': HTMLTodoAppElement
-    'todo-list': HTMLTodoListElement
+    'todomvc-stencil': HTMLTodomvcStencilElement
   }
 
   interface ElementTagNameMap {
-    'todo-app': HTMLTodoAppElement;
-    'todo-list': HTMLTodoListElement;
+    'todomvc-stencil': HTMLTodomvcStencilElement;
   }
 
 

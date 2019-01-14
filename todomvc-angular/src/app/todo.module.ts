@@ -11,10 +11,10 @@ import { TodoStore } from './todo-store.service';
   providers: [TodoStore],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {
+export class TodoModule {
   constructor(injector: Injector) {
     const todoApp = createCustomElement(TodoApp, { injector });
-    customElements.define("todo-app", todoApp);
+    customElements.define("todomvc-angular", todoApp);
   }
   ngDoBootstrap() {}
 }

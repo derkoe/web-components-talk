@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --prod && cat dist/todo/runtime.js dist/todo/polyfills.js dist/todo/scripts.js dist/todo/main.js > dist/todo/todo.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

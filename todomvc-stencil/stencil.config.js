@@ -1,6 +1,6 @@
 exports.config = {
 	bundles: [
-		{ components: ['todo-app', 'todo-list'] }
+		{ components: ['todomvc-stencil'] }
 	],
 	namespace: 'todo',
 	outputTargets: [

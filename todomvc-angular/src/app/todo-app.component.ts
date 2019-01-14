@@ -1,15 +1,15 @@
-import { Component, ViewEncapsulation } from "@angular/core";
-import { TodoStore, Todo } from "./todo-store.service";
+import { Component, ViewEncapsulation } from '@angular/core';
+import { TodoFilter, TodoStore, Todo } from './todo-store.service';
 
 @Component({
-  selector: "todo-app",
-  templateUrl: "./todo-app.component.html",
-  styleUrls: ["./todo-app.component.css"],
+  selector: 'todomvc-angular',
+  templateUrl: './todo-app.component.html',
+  styleUrls: ['./todo-app.component.css'],
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class TodoApp {
   todoStore: TodoStore;
-  newTodoText = "";
+  newTodoText = '';
 
   constructor(todoStore: TodoStore) {
     this.todoStore = todoStore;
@@ -54,7 +54,7 @@ export class TodoApp {
   addTodo() {
     if (this.newTodoText.trim().length) {
       this.todoStore.add(this.newTodoText);
-      this.newTodoText = "";
+      this.newTodoText = '';
     }
   }
 }

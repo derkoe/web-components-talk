@@ -5,7 +5,7 @@
   <section class="main" *ngIf="todoStore.todos.length > 0">
     <input id="toggle-all" class="toggle-all" type="checkbox" *ngIf="todoStore.todos.length" #toggleall [checked]="todoStore.allCompleted()" (click)="todoStore.setAllTo(toggleall.checked)">
     <ul class="todo-list">
-      <li *ngFor="let todo of todoStore.todos" [class.completed]="todo.completed" [class.editing]="todo.editing">
+      <li *ngFor="let todo of todoStore.filteredTodos" [class.completed]="todo.completed" [class.editing]="todo.editing">
         <div class="view">
           <input class="toggle" type="checkbox" (click)="toggleCompletion(todo)" [checked]="todo.completed">
           <label (dblclick)="editTodo(todo)">{{todo.title}}</label>
@@ -17,6 +17,11 @@
   </section>
   <footer class="footer" *ngIf="todoStore.todos.length > 0">
     <span class="todo-count"><strong>{{todoStore.getRemaining().length}}</strong> {{todoStore.getRemaining().length == 1 ? 'item' : 'items'}} left</span>
+    <ul class="filters">
+      <li><a [class.selected]="todoStore.filter === 'all'" (click)="todoStore.filter = 'all'">All</a></li>
+      <li><a [class.selected]="todoStore.filter === 'active'" (click)="todoStore.filter = 'active'">Active</a></li>
+      <li><a [class.selected]="todoStore.filter === 'completed'" (click)="todoStore.filter = 'completed'">Completed</a></li>
+    </ul>
     <button class="clear-completed" *ngIf="todoStore.getCompleted().length > 0" (click)="removeCompleted()">Clear completed</button>
   </footer>
 </section>

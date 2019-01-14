@@ -17,8 +17,10 @@ export class Todo {
   }
 }
 
+export type TodoFilter = 'all' | 'active' | 'completed';
 export class TodoStore {
   todos: Array<Todo>;
+  filter: TodoFilter = 'all';
 
   constructor() {
     let persistedTodos = JSON.parse(
@@ -32,6 +34,17 @@ export class TodoStore {
         return ret;
       }
     );
+  }
+
+  get filteredTodos(): Todo[] {
+    switch (this.filter) {
+      case 'active':
+        return this.todos.filter(todo => !todo.completed);
+      case 'completed':
+        return this.todos.filter(todo => todo.completed);
+      default:
+        return this.todos;
+    }
   }
 
   private updateStore() {

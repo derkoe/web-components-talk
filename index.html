@@ -48,38 +48,46 @@
 
       <section>
 
+        <section>
+          <small>Agenda</small>
+          <h3><em>Web Component Standards: <br>Custom Elements, Shadow DOM & Co</em></h3>
+          <h3><em>When to use Web Components</em></h3>
+          <h3><em>Implementing Web Components</em></h3>
+          <h3><em>Future?</em></h3>
+        </section>
+
         <section data-background="background_ich.jpg" style="color: white">
           <div style="background-color: rgba(0, 0, 0, 0.3); padding: 50px 100px;">
             <h2 style="color: white">Christian Köberl</h2>
-            <p>Software Architect / Developer</p>
-            <p>Develops webapps since 1999</p>
+            <p>All-End Developer</p>
+            <p>Develops web apps since 1999</p>
           </div>
-        </section>
-
-        <section>
-            <h2>Agenda</h2>
-            <div>
-              <p>Web Components: <br>Custom Elements, Shadow DOM & Co</p>
-              <p>Stencil.js</p>
-              <p>Angular Elements</p>
-              <p>Future?</p>
-            </div>
         </section>
 
       </section>
       <section>
 
         <section>
-          <small>Web Components</small>
+          <h1>Web Component Standards</h1>
+        </section>
+
+        <section>
+          <p></p>
           <h2><em>Custom Elements</em></h2>
           <h2><em>Shadow DOM</em></h2>
           <h2><em>HTML Templates</em></h2>
           <h2 class="fragment strike"><em>HTML Imports</em></h2>
+          <h2 class="fragment"><em>CSS Variables</em></h2>
+          <aside class="notes">
+            HTML Import are deprecated (and only implemented in Chrome)
+            CSS Custom Properties (aka CSS Variables)
+          </aside>
         </section>
 
         <section>
           <h2>Custom Elements</h2>
-          <pre><code class="hljs html">&lt;dk-tabs&gt;
+          <pre><code class="hljs html">&lt;script src=&quot;dk-tabs.js&quot;&gt;&lt;/script&gt;
+&lt;dk-tabs&gt;
   &lt;dk-tab title=&quot;Tab 1&quot;&gt;This is tab one&lt;/dk-tab&gt;
   &lt;dk-tab title=&quot;Tab 2&quot;&gt;&lt;div&gt;Antoher tab&lt;/div&gt;&lt;/dk-tab&gt;
 &lt;/dk-tabs&gt;</code></pre>
@@ -87,16 +95,16 @@
         </section>
 
         <section>
-            <h2>Shadow DOM</h2>
-            <img src="shadow_dom_devtools.jpg" alt="Chrome Dev Tools showing Shadow DOM">
-          </section>
-
-        <section>
           <h2>Custom Elements</h2>
           <img src="caniuse_custom_elements.jpg" alt="Can I use Custom Elements">
           <aside class="notes">
             Safari only supports new elements - not customized built-in elements.
           </aside>
+        </section>
+
+        <section>
+          <h2>Shadow DOM</h2>
+          <img src="shadow_dom_devtools.jpg" alt="Chrome Dev Tools showing Shadow DOM">
         </section>
 
         <section>
@@ -113,8 +121,8 @@
         </section>
 
         <section>
-          <h2>HTML Imports</h2>
-          <img src="caniuse_html_imports.jpg" alt="Can I use HTML Imports">
+          <h2>CSS Custom Properties<br>= CSS Variables</h2>
+          <img src="caniuse_css_variables.jpg" alt="Can I use HTML Imports">
         </section>
 
         <section>
@@ -128,16 +136,26 @@
           </aside>
         </section>
 
+      </section>
+      <section>
+
         <section>
-          <h2>Options</h2>
-          <p>Custom Elements / Shadow DOM API</p>
-          <p>Lib / Compiler: <br> Stencil.js, SkateJS, Polymer, lit-element</p>
-          <p>Framework: <br> Angular, Vue, ...</p>
+          <h2>When to use Web Components</h2>
+
         </section>
 
         <section>
-          <h2>Comparing NPM Downloads</h2>
-          <img src="stencil-skate-polymet-lit.png" style="background-color: white" alt="Comparing NPM downloads of Stenicl.js, SkateJS, Polymer and lit-element">
+          <h2>Implementing Components</h2>
+          <ol>
+            <li>Custom Elements / Shadow DOM API</li>
+            <li>Lib / Compiler: <br> Stencil.js, SkateJS, Polymer, lit-element</li>
+            <li>Framework: <br> Angular, Vue, ...</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Lib / Compilers</h2>
+          <img src="stencil-skate-polymet-lit.png" alt="Comparing NPM downloads of Stenicl.js, SkateJS, Polymer and lit-element">
           <small><a href="https://www.npmtrends.com/@stencil/core-vs-skatejs-vs-@polymer/polymer-vs-@polymer/lit-element">Source: www.npmtrends.com</a></small>
         </section>
 
@@ -163,8 +181,10 @@
           <h3>References, Further Readings</h3>
           <ul>
             <li><a href="https://developers.google.com/web/fundamentals/web-components/" target="_blank">Building Components | Google Developers</a></li>
+            <li><a href="https://custom-elements-everywhere.com/">Custom Elements Everywhere 🍻</a></li>
             <li><a href="https://stenciljs.com/">Stencil Homepage</a></li>
             <li><a href="https://angular.io/guide/elements">Angular Elements</a></li>
+            <li><a href="https://www.youtube.com/watch?v=SgnE3p1qF-c">2018 - The Year of Web Components - Dominik Kundel</a></li>
           </ul>
         </section>
 

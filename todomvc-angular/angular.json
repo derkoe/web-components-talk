@@ -43,7 +43,8 @@
             "assets": [],
             "styles": [],
             "scripts": [
-              "node_modules/@webcomponents/custom-elements/src/native-shim.js"
+              "node_modules/@webcomponents/custom-elements/src/native-shim.js",
+              "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"
             ]
           },
           "configurations": {

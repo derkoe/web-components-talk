@@ -1,17 +1,28 @@
-@import url(./node_modules/reveal.js/css/theme/moon.css);
+@import url(./node_modules/reveal.js/css/theme/sky.css);
 
+.reveal h1 {
+  font-size: 3em;
+}
+.reveal h1, .reveal h2, .reveal h3 {
+  text-transform: none;
+}
 .reveal em {
   font-style: normal;
+  text-transform: none;
 }
 .reveal h2:nth-child(2) em, .reveal h3:nth-child(2) em {
-  color: rgb(109, 179, 76);
+  color: rgb(82, 136, 57);
 }
 .reveal h2:nth-child(3) em, .reveal h3:nth-child(3) em {
   color: rgb(179, 76, 122);
 }
 .reveal h2:nth-child(4) em, .reveal h3:nth-child(4) em {
-  color: rgb(76, 148, 179);
+  color: rgb(48, 120, 151);
 }
+.reveal h2:nth-child(5) em, .reveal h3:nth-child(5) em {
+  color: rgb(116, 76, 179);
+}
+
 .reveal section img {
   border: 0;
   background: none;

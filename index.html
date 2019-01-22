@@ -89,7 +89,7 @@
           <pre><code class="hljs html">&lt;script src=&quot;dk-tabs.js&quot;&gt;&lt;/script&gt;
 &lt;dk-tabs&gt;
   &lt;dk-tab title=&quot;Tab 1&quot;&gt;This is tab one&lt;/dk-tab&gt;
-  &lt;dk-tab title=&quot;Tab 2&quot;&gt;&lt;div&gt;Antoher tab&lt;/div&gt;&lt;/dk-tab&gt;
+  &lt;dk-tab title=&quot;Tab 2&quot;&gt;&lt;h2&gt;Antoher tab&lt;/h2&gt;&lt;/dk-tab&gt;
 &lt;/dk-tabs&gt;</code></pre>
           <iframe src="./tabs-plain/simple.html"></iframe>
         </section>
@@ -105,6 +105,12 @@
         <section>
           <h2>Shadow DOM</h2>
           <img src="shadow_dom_devtools.jpg" alt="Chrome Dev Tools showing Shadow DOM">
+          <aside class="notes">
+            <ul>
+              <li>CSS Scoping</li>
+              <li>Multiple DOM Trees in one document</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -117,11 +123,37 @@
 
         <section>
           <h2>HTML Templates</h2>
+          <p>Parse HTML only once</p>
+          <pre><code class="hljs html">&lt;template id=&quot;item-template&quot;&gt;
+  &lt;div&gt;Whatever content you like&lt;/div&gt;
+&lt;/template&gt;</code></pre>
+          <pre><code class="hljs js">const templ = document.getElementById('item-template')
+for (let i = 0; i < 100; i++) {
+  const node = document.importNode(templ.content, true)
+  elm.appendChild(node);
+}
+</code></pre>
+        </section>
+
+        <section>
+          <h2>HTML Templates</h2>
           <img src="caniuse_html_templates.jpg" alt="Can I use HTML Templates">
         </section>
 
         <section>
-          <h2>CSS Custom Properties<br>= CSS Variables</h2>
+          <h2>CSS Variables</h2>
+          <p>Declare a variable</p>
+          <pre><code class="hljs css">element { /* or use pseudo selector :root */
+  --background-color: #3f0;
+}</code></pre>
+          <p>Use variable</p>
+          <pre><code class="hljs css">element {
+  background: var(--background-color, #9E9E9E);
+}</code></pre>
+          </section>
+
+        <section>
+            <h2>CSS Variables </h2>
           <img src="caniuse_css_variables.jpg" alt="Can I use HTML Imports">
         </section>
 
@@ -140,17 +172,91 @@
       <section>
 
         <section>
-          <h2>When to use Web Components</h2>
-
+          <h1>When to use Web Components</h1>
         </section>
 
         <section>
-          <h2>Implementing Components</h2>
+          <h2>Reusable Web Thingies</h2>
+          <p>Former jQuery Plugins</p>
+          <p>Examples: gallery, date-picker</p>
+        </section>
+
+        <section>
+          <img src="gallery_component.gif" alt="">
+          <small><a href="https://silverlinkz.net/projects/gallery" target="_blank">https://silverlinkz.net/projects/gallery</a></small>
+        </section>
+
+        <section>
+          <h2>UI Frameworks</h2>
+          <p><a href="https://beta.ionicframework.com/docs/components" target="_blank">Ionic Framework 4</a></p>
+          <p>Your in-house component framework</p>
+        </section>
+
+        <section>
+          <h2>App Navigation</h2>
+          <img src="appnav_google.jpg" alt="Application navigation Google" height="600">
+          <a href="https://www.caradvisor.at" target="_blank"><img src="appnav_carlog.jpg" alt="Application navigation Carlog" height="600"></a>
+        </section>
+
+        <section>
+          <h2>Your whole app</h2>
+          <a href="https://www.cupraofficial.at/cupra-ateca/konfigurieren" target="_blank">
+            <img src="easy-cc.jpg" alt="Screenshot of easy car configurator in Cupra site">
+          </a>
+        </section>
+
+      </section>
+      <section>
+
+        <section>
+          <h1>Implementing <br>Web Components</h1>
+        </section>
+        <section>
+          <h2>Options</h2>
           <ol>
-            <li>Custom Elements / Shadow DOM API</li>
-            <li>Lib / Compiler: <br> Stencil.js, SkateJS, Polymer, lit-element</li>
-            <li>Framework: <br> Angular, Vue, ...</li>
+            <li>Native API (Custom Elements / Shadow DOM)</li>
+            <li>Lib / Compiler <br> Stencil.js, SkateJS, Polymer, LitElement</li>
+            <li>Framework <br> Angular, Vue, Svelte, ...</li>
           </ol>
+        </section>
+
+        <section>
+          <h2>Native API</h2>
+          <h1>Demo</h1>
+        </section>
+
+        <section>
+          <h2>Stencil</h2>
+          <pre><code class="hljs jsx">@Component({
+  tag: 'my-hello',
+  styleUrl: 'my-hello.css',
+  shadow: true
+})
+export class HelloComponent {
+  @Prop() name = 'world';
+
+  render() {
+    return (
+      <p>Hello, {this.name}</p>
+    );
+  }
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>LitElement</h2>
+          <pre><code class="hljs js">@customElement('my-hello')
+class HelloComponent extends LitElement {
+  @property() name = 'world';
+
+  render() {
+    return html`
+      <style>/* style here */</style>
+      <p>Hello, ${this.name}</p>
+    `;
+  }
+}</code></pre>
+        <small>LitElement always uses Shadow DOM</small>
         </section>
 
         <section>
@@ -158,6 +264,24 @@
           <img src="stencil-skate-polymet-lit.png" alt="Comparing NPM downloads of Stenicl.js, SkateJS, Polymer and lit-element">
           <small><a href="https://www.npmtrends.com/@stencil/core-vs-skatejs-vs-@polymer/polymer-vs-@polymer/lit-element">Source: www.npmtrends.com</a></small>
         </section>
+
+        <section>
+          <h2>Frameworks</h2>
+          <p>Build component in your framework of choice</p>
+          <ul>
+            <li><a href="https://angular.io/guide/elements">Angular Elements</a></li>
+            <li><a href="https://github.com/spring-media/react-web-component">React Web Component</a></li>
+            <li><a href="https://karol-f.github.io/vue-custom-element/">Vue Custom Element</a></li>
+          </ul>
+        </section>
+
+        <section data-background-iframe="https://wc-todo.firebaseapp.com/"></section>
+
+        <section>
+          <h2>Using Web Components</h2>
+        </section>
+
+        <section data-background-iframe="https://custom-elements-everywhere.com/"></section>
 
       </section>
 
@@ -181,10 +305,12 @@
           <h3>References, Further Readings</h3>
           <ul>
             <li><a href="https://developers.google.com/web/fundamentals/web-components/" target="_blank">Building Components | Google Developers</a></li>
+            <li><a href="https://wc-todo.firebaseapp.com/">Web Components Todo</a></li>
             <li><a href="https://custom-elements-everywhere.com/">Custom Elements Everywhere 🍻</a></li>
             <li><a href="https://stenciljs.com/">Stencil Homepage</a></li>
             <li><a href="https://angular.io/guide/elements">Angular Elements</a></li>
             <li><a href="https://www.youtube.com/watch?v=SgnE3p1qF-c">2018 - The Year of Web Components - Dominik Kundel</a></li>
+            <li><a href="https://medium.com/@thangman22/stencil-js-vs-lit-element-vs-vanilla-vs-shadow-dom-vs-vue-js-5d2ade971183">Stencil.js vs lit-element vs Vanilla vs Shadow DOM vs Vue.js What is the best solution for Web component</a></li>
           </ul>
         </section>
 

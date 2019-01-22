@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Typescript - The better JavaScript?",
   "scripts": {
-    "start": "browser-sync start -s --no-open",
-    "watch": "browser-sync start -s --no-open -f index.html,poi.css"
+    "start": "browser-sync start -s --no-open --port 8080",
+    "watch": "browser-sync start -s --no-open --port 8080 -f index.html,theme.css,simple-plain/*"
   },
   "author": "Christian Köberl",
   "license": "CC-BY-SA-4.0",

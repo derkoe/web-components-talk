@@ -53,7 +53,6 @@
           <h3><em>Web Component Standards: <br>Custom Elements, Shadow DOM & Co</em></h3>
           <h3><em>When to use Web Components</em></h3>
           <h3><em>Implementing Web Components</em></h3>
-          <h3><em>Future?</em></h3>
         </section>
 
         <section data-background="background_ich.jpg" style="color: white">
@@ -281,24 +280,59 @@ class HelloComponent extends LitElement {
           <h2>Using Web Components</h2>
         </section>
 
-        <section data-background-iframe="https://custom-elements-everywhere.com/"></section>
+        <section>
+          <h2>Tab Component</h2>
+          <h1>Demo</h1>
+        </section>
+
+        <section>
+          <h2>Example: Angular</h2>
+          <ol>
+            <li>Add custom elements schema:
+              <pre><code class="hljs">@NgModule({
+  // ...
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})</code></pre></li>
+            <li>Import the component in your module:
+              <pre><code class="hljs js">import '@myscope/mycomponent'</code></pre>
+            </li>
+            <li>Use it in your HTML:
+                <pre><code class="hljs html">&lt;my-component [attr]=&quot;val&quot;&gt;&lt;/my-component&gt;</code></pre>
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <p>Does Framework X Support this?</p>
+          <iframe data-src="https://custom-elements-everywhere.com/" frameborder="0" width="1000" height="600"></iframe>
+        </section>
+
+        <section>
+          <h2>Gotcha: Polyfills / ES5 (IE11)</h2>
+          <p>Stencil works OOTB (even in IE11)!</p>
+          <p>Fiddle with all others 😭</p>
+          <small>
+            For Custom Elements + Shadow DOM: @webcomponents/webcomponentsjs/webcomponents-bundle.js
+            <br><br>
+            For ES5: @webcomponents/custom-elements/src/native-shim.js
+          </small>
+        </section>
 
       </section>
 
       <section>
 
         <section>
-          <h2>Thanks! Questions?</h2>
-          <a href="https://github.com/derkoe">github.com/derkoe</a> / <a href="https://twitter.com/derkoe">@derkoe</a>
-          <div style="margin-top: 150px;">
+          <h2>Summary</h2>
+          <h3><em>Use web components for shared stuff</em></h3>
+          <h3><em>Write small components in Stencil, LitElement & Co</em></h3>
+          <h3><em>More complex: <br> use the framework of choice</em></h3>
+          <h3><em>IE11 is hard</em></h3>
         </section>
 
         <section>
-          <h3>Image Credits</h3>
-          <ul>
-            <li>Title Christian Köberl: &copy; Christian Köberl</li>
-            <li>All others &copy; Porsche Informatik </li>
-          </ul>
+          <h2>Thanks! Questions? 🍻</h2>
+          <a href="https://github.com/derkoe">github.com/derkoe</a> / <a href="https://twitter.com/derkoe">@derkoe</a>
         </section>
 
         <section>
@@ -306,7 +340,7 @@ class HelloComponent extends LitElement {
           <ul>
             <li><a href="https://developers.google.com/web/fundamentals/web-components/" target="_blank">Building Components | Google Developers</a></li>
             <li><a href="https://wc-todo.firebaseapp.com/">Web Components Todo</a></li>
-            <li><a href="https://custom-elements-everywhere.com/">Custom Elements Everywhere 🍻</a></li>
+            <li><a href="https://custom-elements-everywhere.com/">Custom Elements Everywhere</a></li>
             <li><a href="https://stenciljs.com/">Stencil Homepage</a></li>
             <li><a href="https://angular.io/guide/elements">Angular Elements</a></li>
             <li><a href="https://www.youtube.com/watch?v=SgnE3p1qF-c">2018 - The Year of Web Components - Dominik Kundel</a></li>

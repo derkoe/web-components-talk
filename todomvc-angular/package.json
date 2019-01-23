@@ -4,11 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod && cat dist/todo/runtime.js dist/todo/polyfills.js dist/todo/scripts.js dist/todo/main.js > dist/todo/todo.js",
+    "build": "ng build --prod && cat dist/todo/runtime.js dist/todo/polyfills.js dist/todo/scripts.js dist/todo/main.js > dist/todo.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "main": "dist/todo.js",
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.1.0",
@@ -21,7 +22,9 @@
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
     "@webcomponents/custom-elements": "^1.2.1",
+    "@webcomponents/shadydom": "^1.4.2",
     "@webcomponents/webcomponentsjs": "^2.2.3",
+    "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
     "document-register-element": "^1.7.2",
     "rxjs": "~6.3.3",
